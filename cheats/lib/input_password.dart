@@ -1,3 +1,4 @@
+import 'package:autopecas/constants.dart';
 import 'package:flutter/material.dart';
 
 class InputPassword extends StatefulWidget {
@@ -14,7 +15,7 @@ class InputPassword extends StatefulWidget {
 }
 
 class _InputPasswordState extends State<InputPassword> {
-  TextEditingController phoneController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
 
   bool _isObscure = true;
 
@@ -25,11 +26,12 @@ class _InputPasswordState extends State<InputPassword> {
       padding: EdgeInsets.symmetric(vertical: size.height * 0.01),
       child: TextField(
         obscureText: _isObscure,
-        controller: phoneController,
+        controller: passwordController,
         decoration: InputDecoration(
           suffixIcon: IconButton(
               icon: Icon(
-                _isObscure ? Icons.visibility : Icons.visibility_off,
+                _isObscure ? Icons.visibility_off : Icons.visibility,
+                color: kTextColor,
               ),
               onPressed: () {
                 setState(() {
